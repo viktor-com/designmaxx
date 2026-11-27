@@ -1,17 +1,27 @@
 ---
 name: infographic
-description: "Make an infographic people get in five seconds: a graphic for a pull request, a launch or ship announcement, a result or metric to share in chat, a social preview image, or a short announcement reel. Produces one self-contained HTML file rendered to a 2x PNG, compact and near square for a chat post or PR by default: a headline that states the point, the real product UI large, before above now, and numbers shown against a named baseline. Colours and fonts come from the project's DESIGN.md. Use whenever a change or a result is announced or shared as a picture."
+description: "Make an infographic people get in five seconds: a graphic for a pull request, a launch or ship announcement, a result or metric to share in chat, a social preview image, or a short announcement reel. Built only from headlines, bullet points, charts, visuals and playful cards; no paragraphs. Produces one self-contained HTML file rendered to a 2x PNG, compact and near square for a chat post or PR by default: a headline that states the point, the real product UI (or a diagram of the mechanism) large, before above now, lots of charts with numbers against a named baseline. Colours and fonts come from the project's DESIGN.md. Use whenever a change or a result is announced or shared as a picture."
 ---
 
 # Infographic
 
 An infographic gets five seconds in a chat feed. In that time it has to say one thing, show it, and prove it. Everything below serves that.
 
+It is made of five things and nothing else:
+
+- **Headlines** that state a finding, never a topic.
+- **Bullet points**, a few words each.
+- **Charts**, lots of them: they carry the numbers.
+- **Visuals**: the real product UI, or a diagram of the mechanism when there is no UI to show.
+- **Playful cards**: small, bright, a little fun, one point each.
+
 ## Read the brand first
 
-Open the project's `DESIGN.md` and read its Graphics section, then its colour and type. Take the ground, the annotation ink, the note font, the cover treatment and the logo rules from there.
+Open the project's `DESIGN.md` (the brand's own when the repo holds several, such as one per app) and read its Graphics section, then its colour and type. Take the ground, the annotation ink, the note font, the cover treatment and the logo rules from there.
 
-If there is no DESIGN.md, use neutral defaults: a light ground, one accent, the system sans-serif, and an annotation ink the product UI never uses. Then offer to write one with the [`brand`](../brand/SKILL.md) skill, so the next graphic is on brand.
+If DESIGN.md has no Graphics section, take colour, type and logo from it and fill the rest the same way: its lightest neutral as the ground, its darkest colour that the product UI never uses as the annotation ink, its body font for notes, its cover or hero treatment for the cover. Say which you picked when you hand the graphic over.
+
+If there is no DESIGN.md, use neutral defaults: a light ground, one accent, the system sans-serif, and an annotation ink the product UI never uses. Then offer to write one (with the project's brand skill, where it has one), so the next graphic is on brand.
 
 Use the logo only where DESIGN.md allows it. If it says nothing, leave it out.
 
@@ -24,6 +34,7 @@ Use the logo only where DESIGN.md allows it. If it says nothing, leave it out.
 | Social preview | 1200 by 630, headline and product only | the landscape template, cut down |
 
 - Set a panel budget before any capture starts: at most two screenshots or two before/after pairs for a chat post. Cut cases rather than shrink them. A tall strip or a grid of many panels is "too large to send" and nobody reads it.
+- Charts sit outside that budget: a row or grid of small charts fits inside the frame. When they outgrow it, keep the strongest and put the rest in the long version.
 - The main change goes first and largest. Lesser changes go in a small "Also:" line at the end.
 - The long version (every case, every number, internals) goes in the PR or a linked page, not in the graphic.
 - With two cases, give each a visibly different view. Two near-identical panels read as one.
@@ -31,9 +42,9 @@ Use the logo only where DESIGN.md allows it. If it says nothing, leave it out.
 ## Hierarchy
 
 - One product point, as a headline that states it: "Search now finds the message, not just the chat", not "Better search". Name the audience in it when only some people get the change.
-- Its picture goes large: the real UI that shows the point.
-- Then short bullets, then one number, then the aside. Equal-weight blocks hide the point.
-- Text is headlines and short bullets only. No paragraphs, no lede, no small print in a corner. Each bullet, caption or panel line is one short phrase.
+- Its picture goes large: the real UI that shows the point. A change with nothing to see on screen (performance, a backend change) gets a diagram of the mechanism instead: shapes and a few labels, before beside now.
+- Then the charts that prove it, then short bullets and cards, then the aside. Equal-weight blocks hide the point.
+- Text is headlines and short bullets only. No paragraphs, no lede, no captions under charts, no small print in a corner. Each bullet, chart label or panel line is one short phrase; a point that seems to need a sentence becomes a bullet, a chart label or a headline.
 - Weigh loudness in the full frame at the size it is seen, never by looking at one block alone. A note colour or a bar that is fine in a crop can be the loudest thing on the whole graphic.
 
 ## Before and after
@@ -66,15 +77,26 @@ Use the logo only where DESIGN.md allows it. If it says nothing, leave it out.
 - One level of annotation. When a screenshot already carries notes, the outer graphic adds none.
 - For a one-word copy change, underline the exact new words the arrow points at.
 
-## Numbers
+## Charts and numbers
+
+- Charts carry the numbers, and there are several of them: where the time or the money went, before against now, the distribution, the timeline. Each answers one question, under a headline that states the answer.
+- Label values at the data, not in a legend, wherever they fit.
+- A measured number and an estimate look different: solid against hatched, or a marked range.
 
 - Say what each number counts and against what: "Right message in the top 3, 46 of 50 test queries, up from 19 of 50". A bare "77%" can read as a failure rate.
 - Positive first: "196 of 197 graded right", not "1 of 197 wrong".
 - A lone big number is decoration. Show a ratio against a named baseline, with the raw counts. Never a bare "was" or "a third of".
 - Round honestly and keep the exact count beside it: 23% is "fewer than 1 in 4", not "about 1 in 4".
 - A fact that is not a comparison, like a limit or a date, goes in a bullet.
-- A measurement shows as a dot with its interval and the number of runs.
+- A measurement shows as a dot with its interval and the number of runs, when you have them. A single reading is a plain bar or point, labelled with where it came from (a bench, a trace).
 - Compute chart geometry from the data. Never draw a bar by eye.
+
+## Playful cards
+
+- A card holds one point: a short headline, two or three bullets, and a big glyph or a small drawing.
+- It is where the fun goes: a bright fill from the brand palette, a slight tilt or a sticker shape. Brand colours, not red and green verdicts.
+- For a technical audience, fun is a clever, precise metaphor; mascots, robots, portals and sparkles read as cute rather than clever.
+- Three cards in a row is the usual set: one per part of the change.
 
 ## Pitch and copy
 
@@ -97,7 +119,8 @@ Posting it, writing the post, social previews and reels: read [references/announ
 ## Checklist
 
 - Near square for a chat post or PR; within the panel budget; the long version linked.
-- The headline states one point; the picture shows it large; the rest is short bullets and one "Also:" line.
+- Only headlines, bullets, charts, visuals and cards; no paragraphs or captions.
+- The headline states one point; the picture (or the mechanism diagram) shows it large; several charts prove it; the rest is short bullets, cards and one "Also:" line.
 - It reads at 600 px wide, and loudness was judged in the full frame.
 - Before is what users had, stacked above (or left of) now, smaller and muted, same state and data.
 - Screenshots are real UI at 2x, realistic seed data showing every new element, no dev chrome.
